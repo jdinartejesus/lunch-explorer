@@ -1,0 +1,17 @@
+{
+  "rules": {
+    ".read": "true",
+    "users": {
+      "$user": {
+        ".write": "newData.exists() || data.child('uid').val() == auth.uid",
+        ".validate": "newData.hasChildren(['email', 'uid'])"
+      }
+    },
+    "restaurants": {
+      "$restaurant": {
+        ".write": "newData.exists() || data.child('uid').val() == auth.uid",
+        ".validate": "newData.hasChildren(['name', 'uid'])"
+      }
+    }
+  }
+}
